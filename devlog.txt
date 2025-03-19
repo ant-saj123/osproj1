@@ -1,0 +1,11 @@
+Day 1: Initial Setup (Logger Basics)
+Progress:
+- Created the initial structure for the logger module.
+- Implemented basic logging functionality that appends messages to a file.
+
+Challenges:
+- Decided on using `sys.stdin` to read messages and `time.strftime` for timestamps.
+
+Next Steps:
+- Improve the log format by including action tags (e.g., "INFO", "ERROR").
+- Start working on the encryptor module.
