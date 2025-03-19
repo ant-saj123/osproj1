@@ -9,3 +9,17 @@ Challenges:
 Next Steps:
 - Improve the log format by including action tags (e.g., "INFO", "ERROR").
 - Start working on the encryptor module.
+
+
+Day 2: Logger Improvements & Encryptor Setup
+
+Progress:
+- Enhanced the logger by adding action tags (e.g., "INFO", "ERROR") for log messages.
+- Created the basic structure for the encryptor module.
+
+Challenges:
+- Figured out how to handle different log message types with the logger.
+
+Next Steps:
+- Implement  cipher encryption logic.
+- Start working on encryption and decryption functionality in the encryptor.
