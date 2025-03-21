@@ -1,4 +1,4 @@
-Day 1: Initial Setup (Logger Basics)
+Day 1: Initial Setup (Logger Basics) - 03/18
 Progress:
 - Created the initial structure for the logger module.
 - Implemented basic logging functionality that appends messages to a file.
@@ -11,7 +11,7 @@ Next Steps:
 - Start working on the encryptor module.
 
 
-Day 2: Logger Improvements & Encryptor Setup
+Day 2: Logger Improvements & Encryptor Setup - 03/19
 
 Progress:
 - Enhanced the logger by adding action tags (e.g., "INFO", "ERROR") for log messages.
@@ -23,3 +23,19 @@ Challenges:
 Next Steps:
 - Implement  cipher encryption logic.
 - Start working on encryption and decryption functionality in the encryptor.
+
+Day 3: Implemented Vigenère Cipher in Encryptor Module - 03/21
+
+Progress:
+
+Replaced the Caesar cipher logic with a Vigenère cipher implementation.
+Ensured both encryption and decryption functions use the passkey character-by-character for accurate transformation.
+Kept the interface (commands like PASSKEY, ENCRYPT, DECRYPT) consistent for smooth integration with the driver.
+Challenges:
+
+Needed to account for key wrapping and preserve case sensitivity.
+Made sure non-alphabetic characters remained unchanged during encryption/decryption.
+Next Steps:
+
+Finalize integration between the encryptor and driver module.
+Begin implementing command history tracking and user interface improvements in the driver.
