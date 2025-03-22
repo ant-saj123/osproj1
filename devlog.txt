@@ -39,3 +39,17 @@ Next Steps:
 
 Finalize integration between the encryptor and driver module.
 Begin implementing command history tracking and user interface improvements in the driver.
+
+
+Day 4: Driver Setup & Integration (Logger + Encryptor) - 03/22
+
+Progress:
+- Created the `driver.py` file to integrate the logger and encryptor modules.
+- Added commands for password setting, encryption, decryption, and history tracking.
+
+Challenges:
+- Managed communication between multiple processes (logger and encryptor) using `subprocess`.
+- Handled edge cases for user input and ensured correct execution flow.
+
+Next Steps:
+- Test the entire system (logger + encryptor) with different commands.
