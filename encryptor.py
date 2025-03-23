@@ -31,18 +31,26 @@ while True:
     command = parts[0].upper()
 
     if command == "PASSKEY":
-        passkey = parts[1] if len(parts) > 1 else None
+        passkey = parts[1].strip() if len(parts) > 1 else None
         print("PASSKEY SET")
         sys.stdout.flush()
 
-    elif command == "ENCRYPT" and passkey:
-        text = parts[1] if len(parts) > 1 else ""
+    elif command == "ENCRYPT":
+        if not passkey:
+            print("ERROR: Passkey not set.")
+            sys.stdout.flush()
+            continue
+        text = parts[1].strip() if len(parts) > 1 else ""
         encrypted_text = vigenere_cipher(text, passkey, decrypt=False)
         print(f"RESULT {encrypted_text}")
         sys.stdout.flush()
 
-    elif command == "DECRYPT" and passkey:
-        text = parts[1] if len(parts) > 1 else ""
+    elif command == "DECRYPT":
+        if not passkey:
+            print("ERROR: Passkey not set.")
+            sys.stdout.flush()
+            continue
+        text = parts[1].strip() if len(parts) > 1 else ""
         decrypted_text = vigenere_cipher(text, passkey, decrypt=True)
         print(f"RESULT {decrypted_text}")
         sys.stdout.flush()

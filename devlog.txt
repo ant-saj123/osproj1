@@ -53,3 +53,15 @@ Challenges:
 
 Next Steps:
 - Test the entire system (logger + encryptor) with different commands.
+
+Day 6: Bug Fixes and Robustness Improvements - 03/23
+
+Progress:
+- Improved `encryptor.py` to  handle missing passkey scenarios by outputting error messages.
+- Added more precise string intake for encrypt/decrypt inputs to avoid blank inputs being processed.
+
+Challenges:
+- Ensuring synchronization between the encryptor and driver without stalling required careful handling of `flush()` and input edge cases.
+
+Next Steps:
+Makr sure everything orks perfectly
