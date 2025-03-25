@@ -1,36 +1,46 @@
-Day 1: Initial Setup (Logger Basics) – 03/18 - 06:59 PM
-I’ve created the initial structure for the logger module and implemented basic logging functionality 
-that writes messages to a file. The logger listens for input from standard input and tags each message with a timestamp.
-I’ve decided to use time.strftime to generate readable timestamps and log them alongside the messages. Each log entry 
-is written on a new line in a text file, making it easy to track events. Going forward, I’m going to improve the format 
-by including tags like "INFO" or "ERROR" and be more specific about the type of messages being logged.
+Day 1: Initial Setup (Logger Basics) – 03/18 - 06:39 PM
+Since the last session, I’ve created the initial structure for the logger module and implemented basic logging functionality 
+that writes messages to a file. The logger listens for input from standard input and tags each message with a timestamp. I’ve 
+decided to use time.strftime to generate readable timestamps and log them alongside the messages. Each log entry is written on 
+a new line in a text file, making it easy to track events. During this session, I focused on setting up the logger and ensuring 
+it logs data as expected. Going forward, I plan to improve the format by including action tags like "INFO" or "ERROR" to provide 
+more clarity on what each log entry represents.
 
-Day 2: Logger Improvements & Encryptor Setup – 03/19 - 08:05 AM
-I’ve improved the logger by introducing action tags like "INFO", "ERROR", and "START" to give more structure and meaning to each log entry. 
-This makes it easier to scan through the logs and identify what kind of action was taken. At the same time, I’ve set up the initial structure 
-for the encryptor module, which will handle all encryption and decryption operations. I’ve also started exploring how to integrate it with 
-the rest of the system. Now that the foundation is in place, I’m going to implement the cipher encryption logic and connect everything together.
+Day 2: Logger Improvements & Encryptor Setup – 03/19 - 08:21 AM
+Since the last session, I’ve improved the logger by introducing action tags like "INFO", "ERROR", and "START" to give more 
+structure and meaning to each log entry. This makes it easier to scan through the logs and identify what kind of action was taken. 
+At the same time, I’ve set up the initial structure for the encryptor module, which will handle all encryption and decryption 
+operations. I’ve also started exploring how to integrate it with the rest of the system. During this session, I focused on 
+improving the logger and laying the groundwork for the encryptor module. Moving forward, I plan to implement the cipher encryption 
+logic and connect everything together.
 
-Day 3: Implemented Vigenère Cipher in Encryptor Module – 03/21 - 12:20 PM
-Today I replaced the Caesar cipher logic with a full Vigenère cipher implementation inside the encryptor module. The encryption and decryption processes 
-now handle character-by-character transformations using a user-defined passkey, and they preserve letter casing while leaving 
-symbols and spaces untouched. I make sure that the encryptor accepts simple commands like PASSKEY, ENCRYPT, and DECRYPT, which 
-keeps it easy to control from the driver script. Handling passkey wrapping is a bit tricky, but it’s all working as expected now.
+Day 3: Implemented Vigenère Cipher in Encryptor Module – 03/21 - 03:27 PM
+Since the last session, I’ve replaced the Caesar cipher logic with a full Vigenère cipher implementation inside the encryptor 
+module. The encryption and decryption processes now handle character-by-character transformations using a user-defined passkey, 
+and they preserve letter casing while leaving symbols and spaces untouched. I made sure that the encryptor accepts simple commands 
+like PASSKEY, ENCRYPT, and DECRYPT, which keeps it easy to control from the driver script. During this session, I focused on 
+replacing the cipher logic and ensuring everything was working with the new Vigenère cipher. For the next steps, I plan to finalize
+ the integration between the encryptor and driver modules.
 
-Day 4: Driver Setup & Integration (Logger + Encryptor) – 03/22 - 03:27 PM
-I’ve created driver.py to serve as the central interface for the user, coordinating between the logger and encryptor processes. 
-The driver now supports commands to set a password, encrypt, decrypt, view command history, and quit. I successfully 
-connect the driver to both subprocesses and handle communication using stdin and stdout. Managing input/output flow between 
-multiple processes is a little tricky, especially ensuring flush() is called where needed, but everything is now running smoothly.
+Day 4: Driver Setup & Integration (Logger + Encryptor) – 03/22 - 07:45 PM
+Since the last session, I’ve created driver.py to serve as the central interface for the user, coordinating between the logger and
+ encryptor processes. The driver now supports commands to set a password, encrypt, decrypt, view command history, and quit. I’ve 
+ successfully connected the driver to both subprocesses and handled communication using stdin and stdout. Managing input/output flow
+  between multiple processes was a bit tricky, especially ensuring flush() is called where needed, but everything is now running smoothly. 
+  During this session, I focused on integrating the logger and encryptor modules and ensuring the driver communicates effectively with them. 
+  Going forward, I plan to test the system with different commands and inputs to ensure everything functions as expected.
 
-Day 5: Bug Fixes and Robustness Improvements – 03/23 - 4:36 PM
-I’ve improved the encryptor.py to handle missing passkey scenarios by outputting error messages when the passkey is not set. 
-I also enhanced the string intake for encrypt and decrypt commands to prevent blank inputs from being processed. These changes 
-prevent the system from running into errors during execution and improve the overall user experience. Synchronizing input/output
- between the encryptor and driver has been a challenge, but I’ve worked through edge cases, and everything is functioning well now.
+Day 5: Bug Fixes and Robustness Improvements – 03/23 - 11:45 AM
+Since the last session, I’ve improved the encryptor.py to handle missing passkey scenarios by outputting error messages when the passkey is 
+not set. I also enhanced the string intake for encrypt and decrypt commands to prevent blank inputs from being processed. These changes prevent 
+the system from running into errors during execution and improve the overall user experience. Synchronizing input/output between the encryptor
+ and driver has been a challenge, but I’ve worked through edge cases, and everything is functioning well now. During this session, I focused 
+ on bug fixes and improving the robustness of the system. The next step is to make sure everything works perfectly with different input cases.
 
-Day 6: Decrypt with History Option – 03/24 - 07:24 PM
-Today, I updated the decrypt command to allow users to either input a new string or select from previously encrypted strings. The 
-system now keeps track of encrypted text in a separate list called encrypted_history, making it easy to recall and decrypt past 
-strings. I added a numbered menu that prompts users to select which string they want to decrypt, and the result is displayed and 
-logged just like any other command. With this functionality complete, everything is working as intended and the feature is fully integrated.
+Day 6: Decrypt with History Option – 03/24 - 7:20 PM
+Since the last session, I’ve updated the decrypt command to allow users to either input a new string or select from previously encrypted 
+strings. The system now keeps track of encrypted text in a separate list called encrypted_history, making it easy to recall and decrypt past 
+strings. I added a numbered menu that prompts users to select which string they want to decrypt, and the result is displayed and logged just
+like any other command. With this functionality complete, everything is working as intended, and the feature is fully integrated. During this 
+session, I focused on enhancing the decrypt command to use the history feature. The next steps are to test the feature and make sure everything
+is functioning smoothly.
